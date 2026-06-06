@@ -2,6 +2,8 @@
 
 用一块 **ESP32 + 几片锡纸(铝箔)** 做的石头扫地机实体遥控器：把锡纸贴在纸板上做成方向键，手指触摸即可遥控扫地机；同时内置一个手机网页，可实时监视触摸、切换控制、屏幕遥控。
 
+<img width="4284" height="5712" alt="Image" src="https://github.com/user-attachments/assets/eb292be3-2625-43a9-bdb9-7ca5859ffc86" />
+
 全程**走局域网 miIO 协议直连扫地机，不经厂商云、不经手机**。ESP32 自己用 MicroPython 实现了 miIO 的握手与 AES 加密。
 
 > A physical remote for Roborock vacuums built from an ESP32 and tin-foil capacitive touch pads. Talks miIO directly over the LAN (no cloud, no phone app), implemented natively in MicroPython.
@@ -17,9 +19,12 @@
 ## 硬件
 
 - **ESP32-WROOM-32**（经典款，双核，带电容触摸引脚 T0–T9）。注意 **ESP32-C3/C6 没有电容触摸**，不适用
-- 5 片**锡纸/铝箔**（巴掌大小以内），贴在纸板上
+- **锡纸/铝箔**（巴掌大小以内），贴在纸板上
 - 杜邦线 / 导线若干
 - 5V 供电（USB / 充电宝 / 电池模块）
+
+<img width="4284" height="5712" alt="Image" src="https://github.com/user-attachments/assets/5ea4b20b-0586-42d9-8125-29bdb24e55c2" />
+
 
 ## 接线（触摸引脚）
 
@@ -70,6 +75,10 @@ ESP32 连上 WiFi 后，手机浏览器打开 `http://<ESP32的IP>/`（同一局
 
 - **监听 Tab**：实时显示哪片锡纸被摸（发光 D-pad）+ 底部可折叠的「灵敏度」滑条（拖动即调，松手存入 flash，断电也记住）。顶部「控制扫地机」开关决定物理触摸是否真正驱动扫地机（默认关 = 仅监视，方便调试）
 - **遥控 Tab**：屏幕上的 D-pad，按住方向键直接遥控扫地机，松手或断连 0.7 秒内自动停（死手保护）
+
+<img width="630" height="1368" alt="Image" src="https://github.com/user-attachments/assets/8c9d2ea1-ea20-467d-978f-089ea7efa12c" />
+
+<img width="630" height="1368" alt="Image" src="https://github.com/user-attachments/assets/7f6b3e49-f441-43dc-a252-39902f2e9937" />
 
 ## 主要特性
 
