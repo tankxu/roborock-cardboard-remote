@@ -25,7 +25,7 @@ RESEND_MS   = 300      # 按住时多久重发一次
 THRESH_RATIO= 0.75     # 触摸判定默认(网页可调); 电池供电触摸变化小, 需较高
 DEBOUNCE    = 3        # 连续N次低于阈值才算真按下(滤噪)
 ADAPT       = 0.02     # 未按下时基线向当前读数靠拢的速度(抗温/湿漂移)
-CONTROL_DEFAULT = False  # 上电默认: False=仅监视(安全), True=直接当遥控
+CONTROL_DEFAULT = True   # 上电默认: True=直接当遥控, False=仅监视(需网页开启)
 # ==================
 
 def load_ratio():                       # 开机读上次保存的灵敏度
